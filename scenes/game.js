@@ -1,6 +1,8 @@
 Crafty.defineScene("Game", function() {
 	
 	var total_points = 0;
+	const PLAYER_WIDTH = 50;
+	const PLAYER_HEIGHT = 50;
 
 	//label: score
 	Crafty.e('2D, DOM, Text') 
@@ -17,20 +19,25 @@ Crafty.defineScene("Game", function() {
 
 	//the payer
 	var redSquare = Crafty.e('2D, DOM, Color, Twoway, Gravity, Collision, player')
-		.attr({x: 0, y: 0, w: 100, h: 100})
+		.attr({x: 0, y: 0, w: PLAYER_WIDTH, h: PLAYER_HEIGHT})
 		.color('#F00')
 		.twoway(200)
 		.gravity('Floor')
 		.onHit('coin', function(hitDatas){
 			Crafty.log("hit the object");
 			 for (var i = 0, l = hitDatas.length; i < l; ++i) { // for each bullet hit
-				//hide obj
+				//hide obj	
 				hitDatas[i].obj.destroy(); // destroy the bullet
 
-				//update point
+				//updates score
 				total_points += 5;
 				Crafty.trigger("UpdateScore", total_points);
 			 }
+		})
+		.onHit('spike', function(hitDatas){
+			console.log("hit spike object");	
+			total_points -= 5;
+			Crafty.trigger("UpdateScore", total_points);
 		});
 
 	//platform1
@@ -69,5 +76,21 @@ Crafty.defineScene("Game", function() {
 	}
 	//endregion coins
 	
+	//full width platform
+	 Crafty.e('Floor, 2D, Canvas, Color')
+		.attr({x: 0, y: 200, w: GAME_SCREEN_WIDTH - 150, h: 5})
+		.color('orange')
 
+	//Add spikes
+	var distance = 5;
+	var spikeStart = 350;
+	var spikeWidth = 5;
+	var spikeHeight = 20;
+	for(var i=0; i<=6; i++) {
+		Crafty.e('2D, Canvas, Color, Collision, spike')
+			.attr({x:spikeStart, y: 200 - spikeHeight, w:spikeWidth, h: spikeHeight})
+			.color('red')
+		
+		spikeStart += distance + spikeWidth;
+	}
 });
