@@ -27,14 +27,23 @@ Crafty.defineScene("Game", function() {
 		.attr({x: 600, y: 550, w: 130, h: 5})
 		.color('orange')
 
-		var _x = 150;
-		var _y = 300;
+		var mx = 150;
+		var my = 350;
 		for(var i = 0; i < 3; i++) {
 			Crafty.e('2D, Collision, Canvas, Color, coin')
-				.attr({x: _x, y: _y, w: 10, h: 10})
+				.attr({x: mx, y: my, w: 10, h: 10})
 				.color('yellow')
-			x+= 30;
-			y-=20;
+			mx+= 30;
+			my-=10;
+		}
+
+		
+		for(var i = 0; i < 3; i++) {
+			Crafty.e('2D, Collision, Canvas, Color, coin')
+				.attr({x: mx, y: my, w: 10, h: 10})
+				.color('yellow')
+			mx+= 30;
+			my+=10;
 		}
 	
 		// Crafty.e('2D, Collision, Canvas, Color, coin')
