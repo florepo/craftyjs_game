@@ -1,4 +1,4 @@
-# Crafty Javascript Game Template
+# Crafty Javascript Game Mini Project
 This repository is providing the basic setup of building 2D games on a HTML Canvas.
 
 It provides:
