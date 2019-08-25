@@ -66,3 +66,11 @@ For example master can be found here:
 [
 https://s3-eu-west-1.amazonaws.com/codersuk-craftyjs-game/master/index.html](
 https://s3-eu-west-1.amazonaws.com/codersuk-craftyjs-game/master/index.html)
+
+
+# Extra
+
+If you have finished the work above you can start to look at implementing sprites into the game environment to add characters, background or furniture.
+In the `/Extra` folder you can use the png icons.
+You can either use individual images or the `Sprite.png` and follow the guide here to use the function 
+[http://craftyjs.com/api/Crafty-sprite.html](http://craftyjs.com/api/Crafty-sprite.html)
