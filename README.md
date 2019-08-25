@@ -76,7 +76,7 @@ You can either use individual images or the `Sprite.png` and follow the guide he
 [http://craftyjs.com/api/Crafty-sprite.html](http://craftyjs.com/api/Crafty-sprite.html)
 
 Here is a sample code to import the Orgre/Golbin
-`
+```javascript
 sprite = Crafty.sprite("Extra/Running/0_Goblin_Running_000.png", {ogre: [0,0,900,900]});
 var Player = Crafty.e('2D, DOM, ogre, Gravity').attr({x:0,y:0,h:100,w:100});
-`
+```
