@@ -1,5 +1,5 @@
 # Crafty Javascript Game Template
-This repository is providing the basic setup of building 2D games on a HTML Canvas.
+This repository is providing the basic setup of building 2D games on a provided HTML Canvas.
 
 It provides:
 - the 'index.html' file for the webpage structure
